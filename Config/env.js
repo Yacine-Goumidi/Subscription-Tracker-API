@@ -1,9 +1,9 @@
-﻿import { config } from 'dotenv';
+﻿import dotenv from 'dotenv';
 
-// TypeScript-style options
-config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
+dotenv.config({
+    path: `.env.${process.env.NODE_ENV || 'development'}.local`,
+});
 
-// Destructuring pour PORT
-const { PORT, Node_ENV } = process.env;
-
-export { PORT };
+export const PORT = process.env.PORT;
+export const NODE_ENV = process.env.NODE_ENV;
+export const DB_URI = process.env.DB_URI;
