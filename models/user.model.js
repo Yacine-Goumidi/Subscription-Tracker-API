@@ -21,9 +21,10 @@ const userSchema = new mongoose.Schema({
         required: [true, "User password is required"],
         trim: true,
         minlength: 6,
-        maxlength: 5,
-        
+        maxlength: 50,
     }
-});
+}, { timestamps: true });
 
-export default mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+
+export default User;
